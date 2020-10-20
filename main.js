@@ -37,11 +37,29 @@ navbar_menu.addEventListener('click', (event)=>{
 
     if(link == null) return;
 
-    const scroll_to = document.querySelector(link);
-    scroll_to.scrollIntoView({behavior: 'smooth'});
+    scrollIntoView(link);
     /*
     --Yujin's solution!--
     const scroll_to = document.querySelector(link).offsetTop;
     window.scrollTo({top:scroll_to - 40, behavior: 'smooth'});
     */
 });
+
+//Handle click on "contact me" button on home
+const home_contact_btn = document.querySelector('.home__contact');
+home_contact_btn.addEventListener('click', ()=>{
+    scrollIntoView('#contact');
+});
+/*
+--Yujin's solution!--
+const contact_btn = document.querySelector('.home__contact');
+contact_btn.addEventListener('click', ()=>{
+    const contact = document.querySelector('#contact');
+    contact.scrollIntoView({behavior: 'smooth'});
+});
+*/
+
+function scrollIntoView(selector){
+    const scroll_to = document.querySelector(selector);
+    scroll_to.scrollIntoView({behavior:'smooth'});
+}
