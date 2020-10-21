@@ -38,11 +38,6 @@ navbar_menu.addEventListener('click', (event)=>{
     if(link == null) return;
 
     scrollIntoView(link);
-    /*
-    --Yujin's solution!--
-    const scroll_to = document.querySelector(link).offsetTop;
-    window.scrollTo({top:scroll_to - 40, behavior: 'smooth'});
-    */
 });
 
 //Handle click on "contact me" button on home
@@ -59,7 +54,20 @@ contact_btn.addEventListener('click', ()=>{
 });
 */
 
+// Make home slowly fade to transparent as the window scrolls down
+const home = document.querySelector('.home__container');
+const home_height = home.getBoundingClientRect().height;
+document.addEventListener('scroll', ()=> {
+    home.style.opacity = 1 - window.scrollY/home_height;
+});
+
+
 function scrollIntoView(selector){
     const scroll_to = document.querySelector(selector);
     scroll_to.scrollIntoView({behavior:'smooth'});
+    /*
+    --Yujin's solution!--
+    const scroll_to = document.querySelector(link).offsetTop;
+    window.scrollTo({top:scroll_to - 40, behavior: 'smooth'});
+    */
 }
