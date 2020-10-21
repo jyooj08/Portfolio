@@ -76,6 +76,53 @@ arrow_btn.addEventListener('click', ()=>{
     scrollIntoView('#home');
 });
 
+// Projects
+const workBtnContainer = document.querySelector('.work__categories');
+const projectContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+workBtnContainer.addEventListener('click', (e)=>{
+    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+    if(filter == null) return;
+
+    projectContainer.classList.add('animation-out');
+
+    setTimeout(()=>{
+        projects.forEach((project)=>{
+        if(filter == '*' || filter == project.dataset.type){
+            project.classList.remove('invisible');
+        } else{
+            project.classList.add('invisible');
+        }
+    });
+        projectContainer.classList.remove('animation-out');
+    }, 300);
+});
+
+/*
+ --Yujin's solution!--
+const category_btn = document.querySelector('.work__categories');
+category_btn.addEventListener('click', (event)=>{
+    //console.log(event.target.value);
+    const category = event.target.value;
+    var projects = document.querySelectorAll('.project');
+    if(category == "All"){
+        for(var i=0;i<projects.length;i++){
+            projects[i].classList.add('visible');
+        }
+        return;
+    }
+
+    for(var i=0;i<projects.length;i++){
+        //console.log(projects[i].dataset.projectType);
+        if(projects[i].dataset.projectType == category){
+            projects[i].classList.add('visible');
+        } else{
+            projects[i].classList.remove('visible');
+        }
+    }
+});
+*/
+
 
 function scrollIntoView(selector){
     const scroll_to = document.querySelector(selector);
