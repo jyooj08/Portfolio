@@ -37,8 +37,30 @@ navbar_menu.addEventListener('click', (event)=>{
 
     if(link == null) return;
 
+    navbar_menu.classList.remove('open');
     scrollIntoView(link);
 });
+
+//Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', (event)=>{
+    navbar_menu.classList.toggle('open');
+});
+/*
+--Yujin's solution!--
+var menuOpen=false;
+const toggleBtn = document.querySelector('.navbar__toggle-btn');
+toggleBtn.addEventListener('click', ()=>{
+    console.log('toggle button');
+    if(!menuOpen){
+        navbar_menu.style.display = 'flex';
+        menuOpen=true;
+    }else{
+        navbar_menu.style.display = 'none';
+        menuOpen=false;
+    }
+});
+*/
 
 //Handle click on "contact me" button on home
 const home_contact_btn = document.querySelector('.home__contact');
