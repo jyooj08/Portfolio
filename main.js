@@ -61,6 +61,21 @@ document.addEventListener('scroll', ()=> {
     home.style.opacity = 1 - window.scrollY/home_height;
 });
 
+// Handle arrow button
+const arrow_btn = document.querySelector('.arrow-up');
+document.addEventListener('scroll', ()=>{
+    if(window.scrollY > home_height/2){
+        arrow_btn.classList.add('appear');
+    }else{
+        arrow_btn.classList.remove('appear');
+    }
+});
+
+arrow_btn.addEventListener('click', ()=>{
+    //window.scrollTo({top:0, behavior: 'smooth'});
+    scrollIntoView('#home');
+});
+
 
 function scrollIntoView(selector){
     const scroll_to = document.querySelector(selector);

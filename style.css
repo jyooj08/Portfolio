@@ -93,6 +93,26 @@ p{
     margin: 4px 0;
 }
 
+/* Arrow button */
+.arrow-up{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--color-dark-orange);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    transition: all 300ms ease-in;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.arrow-up.appear{
+    opacity: 1;
+    pointer-events: all;
+}
+
 /* Navbar */
 #navbar{
     position: fixed;
