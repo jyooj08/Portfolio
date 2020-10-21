@@ -80,10 +80,20 @@ arrow_btn.addEventListener('click', ()=>{
 const workBtnContainer = document.querySelector('.work__categories');
 const projectContainer = document.querySelector('.work__projects');
 const projects = document.querySelectorAll('.project');
+const workBtns = document.querySelectorAll('.category__btn');
 workBtnContainer.addEventListener('click', (e)=>{
     const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
     if(filter == null) return;
 
+    const active = document.querySelector('.category__btn.active');
+    active.classList.remove('active');
+    const target = e.target.nodeName ==="BUTTON"? e.target : e.target.parentNode;
+    target.classList.add('active');
+    /*workBtns.forEach((btn)=>{
+        if(btn.classList.contains('active')){
+            btn.classList.remove('active')
+        }
+    });*/
     projectContainer.classList.add('animation-out');
 
     setTimeout(()=>{
