@@ -157,11 +157,9 @@ category_btn.addEventListener('click', (event)=>{
 
 
 function scrollIntoView(selector){
-    const scroll_to = document.querySelector(selector);
-    scroll_to.scrollIntoView({behavior:'smooth'});
-    /*
-    --Yujin's solution!--
-    const scroll_to = document.querySelector(link).offsetTop;
-    window.scrollTo({top:scroll_to - 40, behavior: 'smooth'});
-    */
+    //const scroll_to = document.querySelector(selector);
+    //scroll_to.scrollIntoView({behavior:'smooth'});
+    //--Yujin's solution!--
+    const scroll_to = document.querySelector(selector).offsetTop;
+    window.scrollTo({top:scroll_to - 60, behavior: 'smooth'});
 }
