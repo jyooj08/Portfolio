@@ -258,6 +258,12 @@ span{
     align-items: center;
 }
 
+.job__logo{
+    width: 200px;
+    height: 70px;
+    object-fit: contain;
+}
+
 .job__desctiption{
     margin: 0 16px;
     text-align: left;
@@ -503,12 +509,12 @@ span{
     margin: 32px 0;
 }
 
-.contact__links{
+.contact__links a{
     font-size: var(--font-large);
     margin: 24px 0;
 }
 
-.contact__links i:hover{
+.contact__links a:hover{
     transform: scale(1.1);
     color: var(--color-black);
     transition: all var(--animation-duration) ease-in;
