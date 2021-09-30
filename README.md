@@ -1,8 +1,6 @@
-# Portfolio-website
+## About The Project
 
 https://jyooj08.github.io/Portfolio/
-
-## About The Project
 
 ![캡처](https://user-images.githubusercontent.com/38034994/135386890-d0037856-ccdc-4274-9b31-73e8471078a1.PNG)
 
